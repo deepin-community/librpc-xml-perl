@@ -1,0 +1,5 @@
+Difference with RPC::XML
+------------------------
+
+Since Apache-1.3 isn't available, Apache::RPC::Server has been removed from
+this Debian package.

@@ -1,4 +1,14 @@
 #!/usr/bin/make -f
 
+PACKAGE = $(shell dh_listpackages)
+TMP     = $(CURDIR)/debian/$(PACKAGE)
+
 %:
 	dh $@
+
+override_dh_auto_build:
+	dh_auto_build -- -C ex MAKEMETHOD="$(PERL) ../etc/make_method"
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -rf $(TMP)/usr/share/perl5/Apache/ $(TMP)/usr/share/man/man3/Apache*

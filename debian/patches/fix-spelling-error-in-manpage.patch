@@ -1,0 +1,19 @@
+Description: Fix spelling errors in manpage
+Origin: vendor
+Bug: https://rt.cpan.org/Ticket/Display.html?id=114315
+Forwarded: https://rt.cpan.org/Ticket/Display.html?id=114315
+Author: Salvatore Bonaccorso <carnil@debian.org>
+Reviewed-by: gregor herrmann <gregoa@debian.org>
+Last-Update: 2021-01-10
+
+--- a/lib/RPC/XML/Server.pm
++++ b/lib/RPC/XML/Server.pm
+@@ -1996,7 +1996,7 @@
+ The B<add_method>, B<add_function> and B<add_procedure> calls are essentialy
+ identical unless called with hash references. Both files and objects contain
+ the information that defines the type (method vs. procedure) of the
+-funtionality to be added to the server. If B<add_method> is called with a file
++functionality to be added to the server. If B<add_method> is called with a file
+ that describes a procedure, the resulting addition to the server object will be
+ a B<RPC::XML::Procedure> object, not a method object.
+ 
