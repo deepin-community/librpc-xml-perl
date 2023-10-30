@@ -1,15 +1,54 @@
-Source: template-repository
-Section: unknown
+Source: librpc-xml-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Ivan Kohler <ivan-debian@420.am>,
+           Damyan Ivanov <dmn@debian.org>,
+           Niko Tyni <ntyni@debian.org>,
+           gregor herrmann <gregoa@debian.org>,
+           Salvatore Bonaccorso <carnil@debian.org>,
+           Xavier Guimard <yadd@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libdatetime-format-iso8601-perl (>= 0.15) <!nocheck>,
+                     libdatetime-perl (>= 2:1.54) <!nocheck>,
+                     libhttp-daemon-perl (>= 6.12) <!nocheck>,
+                     libhttp-message-perl (>= 6.26) <!nocheck>,
+                     libio-socket-ip-perl <!nocheck>,
+                     libnet-server-perl <!nocheck>,
+                     libscalar-list-utils-perl (>= 1:1.55) <!nocheck>,
+                     libsocket-perl <!nocheck>,
+                     libtest-simple-perl (>= 1.302183) <!nocheck>,
+                     libwww-perl (>= 6.51) <!nocheck>,
+                     libxml-libxml-perl <!nocheck>,
+                     libxml-parser-perl (>= 2.46) <!nocheck>,
+                     netbase <!nocheck>,
+                     perl
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/librpc-xml-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/librpc-xml-perl.git
+Homepage: https://metacpan.org/release/RPC-XML
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: librpc-xml-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libdatetime-format-iso8601-perl (>= 0.15),
+         libhttp-daemon-perl (>= 6.12),
+         libhttp-message-perl (>= 6.26),
+         libio-socket-ip-perl,
+         libscalar-list-utils-perl (>= 1:1.55),
+         libsocket-perl,
+         libwww-perl (>= 6.51),
+         libxml-parser-perl (>= 2.46)
+Suggests: libapache2-mod-perl2,
+          libcgi-pm-perl,
+          libcompress-raw-zlib-perl,
+          libdatetime-perl (>= 2:1.54),
+          libxml-libxml-perl
+Description: Perl implementation of the XML-RPC protocol
+ RPC::XML is a Perl module that implements the XML-RPC protocol. It provides
+ classes for sample client and server implementations, a server designed as
+ an Apache location-handler, and a suite of data-manipulation classes that
+ are used by them.
